@@ -83,3 +83,87 @@ footer{
     margin-bottom:15px;
     color:#e63946;
 }
+.gallery{
+    text-align:center;
+    padding:60px 20px;
+    background:#f9f9f9;
+}
+
+.gallery h2{
+    font-size:35px;
+    margin-bottom:40px;
+}
+
+.gallery-container{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:20px;
+}
+
+.gallery-container img{
+    width:250px;
+    border-radius:12px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.2);
+}
+.prices{
+    text-align:center;
+    padding:60px 20px;
+}
+
+.prices h2{
+    font-size:35px;
+    margin-bottom:40px;
+}
+
+.prices table{
+    margin:0 auto;
+    border-collapse:collapse;
+    width:90%;
+    max-width:700px;
+}
+
+.prices th, .prices td{
+    border:1px solid #ddd;
+    padding:15px;
+    font-size:18px;
+}
+
+.prices th{
+    background:#111;
+    color:white;
+}
+.upload{
+    text-align:center;
+    padding:60px 20px;
+    background:#f9f9f9;
+}
+
+.upload h2{
+    font-size:35px;
+    margin-bottom:40px;
+}
+
+.upload form{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:15px;
+}
+
+.upload input{
+    padding:12px;
+    width:300px;
+    border-radius:8px;
+    border:1px solid #ccc;
+}
+
+.upload button{
+    padding:15px 25px;
+    background:#25D366;
+    color:white;
+    border:none;
+    border-radius:8px;
+    font-weight:bold;
+    cursor:pointer;
+}
