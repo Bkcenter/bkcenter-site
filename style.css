@@ -571,7 +571,95 @@ body::after{
 
 .hero .whatsapp:hover{
     background:#1ebe5d;
+}/* ===== MOBILE FIX ===== */
+
+html, body {
+  overflow-x: hidden;
 }
+
+* {
+  max-width: 100%;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.container {
+  width: 100% !important;
+  max-width: 1200px;
+  margin: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+section {
+  width: 100%;
+}
+
+.hero {
+  background-size: cover;
+  background-position: center;
+}/* =========================
+   MOBILE RESPONSIVE FIX
+   ========================= */
+
+/* remove the dangerous vh height */
+.hero-section{
+    height:auto !important;
+    min-height:520px;
+    padding:80px 20px;
+}
+
+/* hero container */
+.hero{
+    margin:40px auto !important;
+    padding:25px 15px !important;
+    max-width:95% !important;
+}
+
+/* logo scaling */
+.logo{
+    width:220px !important;
+    max-width:80%;
+    margin:0 auto 15px auto;
+}
+
+/* titles */
+.hero h1{
+    font-size:28px !important;
+    line-height:1.2;
+}
+
+.hero p{
+    font-size:16px !important;
+}
+
+/* services cards stack vertically */
+.service-cards{
+    flex-direction:column !important;
+    align-items:center;
+}
+
+.card{
+    width:90% !important;
+    max-width:340px;
+}
+
+/* gallery images */
+.gallery-container img{
+    width:100% !important;
+    max-width:320px;
+}
+
+/* prevent horizontal scrolling (THIS removes the grey side) */
+html,body{
+    overflow-x:hidden !important;
+}
+
+
 
 
 
