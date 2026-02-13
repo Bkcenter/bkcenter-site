@@ -657,7 +657,57 @@ section {
 /* prevent horizontal scrolling (THIS removes the grey side) */
 html,body{
     overflow-x:hidden !important;
+}/* CONTACT FORM */
+
+.contact{
+    text-align:center;
+    padding:70px 20px;
+    background:#ffffff;
 }
+
+.contact h2{
+    font-size:36px;
+    margin-bottom:30px;
+}
+
+.contact form{
+    max-width:500px;
+    margin:auto;
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+}
+
+.contact input,
+.contact textarea{
+    padding:14px;
+    border-radius:8px;
+    border:1px solid #ccc;
+    font-size:16px;
+    width:100%;
+}
+
+.contact textarea{
+    min-height:130px;
+    resize:vertical;
+}
+
+.contact button{
+    background:#25D366;
+    color:white;
+    padding:15px;
+    border:none;
+    border-radius:8px;
+    font-size:18px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.contact button:hover{
+    background:#1ebe5d;
+}
+
 
 
 
