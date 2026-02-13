@@ -1,673 +1,187 @@
-body{/* ANIMATED ABSTRACT BACKGROUND */
-body{
+/* ======================
+   GLOBAL RESET
+   ====================== */
+*{
     margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html,body{
     font-family: Arial, Helvetica, sans-serif;
-background: linear-gradient(-45deg, #0f2027, #6b3fd1, #2c5364, #ff3c3c);
-    background-size: 400% 400%;
-    animation: gradientBG 12s ease infinite;
+    overflow-x:hidden;
+    background:#f5f5f5;
     color:#222;
 }
 
-/* animation movement */
-@keyframes gradientBG {
-    0%{
-        background-position: 0% 50%;
-    }
-    50%{
-        background-position: 100% 50%;
-    }
-    100%{
-        background-position: 0% 50%;
-    }
-}
-
-    margin:0;
-    font-family: Arial, Helvetica, sans-serif;
-    background:#f5f5f5;
-}
-/* HERO BACKGROUND IMAGE */
+/* ======================
+   HERO SECTION
+   ====================== */
 
 .hero-section{
     position:relative;
-    height:100vh;
+    min-height:100vh;
     display:flex;
     justify-content:center;
     align-items:center;
-    overflow:hidden;
+    text-align:center;
+    padding:60px 20px;
 }
 
 .hero-section::before{
     content:"";
     position:absolute;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
-
+    inset:0;
     background:url("images/print.jpg") center/cover no-repeat;
-
     filter:brightness(0.45);
-    z-index:-2;
+    z-index:-1;
 }
-
-header{
-    /* GLASS HERO CARD */
 
 .hero{
     max-width:700px;
-    margin:120px auto;
-    padding:50px;
-    border-radius:18px;
-
-    background: rgba(255,255,255,0.12);
-  
-
-    border:1px solid rgba(255,255,255,0.25);
-    box-shadow:0 20px 60px rgba(0,0,0,0.35);
-
-    text-align:center;
-    color:rgb(184, 30, 171);
-}
-background: url('images/banner.jpg') center/cover no-repeat;
-    color:rgb(160, 24, 126);
-    text-align:center;
-    padding:120px 20px;
-    position:relative;
-}
-
-.hero-content{
-    background: rgba(0,0,0,0.5);
-    display:inline-block;
-    padding:40px 60px;
+    padding:40px 25px;
+    background:rgba(0,0,0,0.55);
     border-radius:15px;
+    color:white;
 }
 
-header h1{
-    font-size:55px;
-    margin:15px 0;
-    font-weight:bold;
+.logo{
+    width:200px;
+    max-width:80%;
+    margin-bottom:15px;
 }
 
-header p{
-    font-size:22px;
-    margin-bottom:30px;
+.hero h1{
+    font-size:40px;
+    margin-bottom:10px;
+}
+
+.hero p{
+    font-size:18px;
+    margin-bottom:25px;
 }
 
 .whatsapp{
     background:#25D366;
     color:white;
-    padding:15px 30px;
+    padding:14px 26px;
+    border-radius:8px;
     text-decoration:none;
-    border-radius:10px;
     font-weight:bold;
-    font-size:18px;
+    display:inline-block;
 }
 
+/* ======================
+   SERVICES
+   ====================== */
+
 .services{
+    padding:70px 20px;
     text-align:center;
-    padding:80px 20px;
-    background:#f5f5f5;
+    background:#ffffff;
 }
 
 .services h2{
-    font-size:40px;
-    margin-bottom:50px;
+    font-size:36px;
+    margin-bottom:40px;
 }
 
 .service-cards{
-    display:flex;
-    flex-wrap:wrap;
-    justify-content:center;
-    gap:30px;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+    max-width:1100px;
+    margin:auto;
 }
 
 .card{
     background:white;
-    width:250px;
     padding:30px 20px;
-    border-radius:15px;
-    box-shadow:0 8px 20px rgba(0,0,0,0.1);
-    transition: transform 0.3s;
+    border-radius:12px;
+    box-shadow:0 8px 20px rgba(0,0,0,0.12);
+    transition:.3s;
 }
 
 .card:hover{
-    transform: translateY(-10px);
+    transform:translateY(-8px);
 }
 
 .card h3{
-    margin:15px 0 10px;
+    margin:12px 0;
     font-size:22px;
 }
 
-.card p{
-    font-size:16px;
-    color:#555;
-}
+/* ======================
+   GALLERY
+   ====================== */
 
-.icon{
-    font-size:45px;
-    color:#e63946;
-    margin-bottom:15px;
-}
-
-
-.card{
-    background:white;
-    width:250px;
-    padding:25px;
-    margin:15px;
-    display:inline-block;
-    border-radius:12px;
-    box-shadow:0 5px 15px rgba(0,0,0,0.1);
-}
-
-footer{
-    background:#111;
-    color:white;
-    text-align:center;
-    padding:20px;
-}
-.logo{
-    width:180px;
-    margin-bottom:20px;
-}
-.icon{
-    font-size:40px;
-    margin-bottom:15px;
-    color:#e63946;
-}
-.logo{
-    width: 600px; /* bigger */
-    margin-bottom: 20px;
-}
-
-
-.logo{
-    width: 600px; /* bigger */
-    margin-bottom: 20px;
-}
-
-
-.icon{
-    font-size:40px;
-    margin-bottom:15px;
-    color:#e63946;
-}
-.icon{
-    font-size:40px;
-    margin-bottom:15px;
-    color:#e63946;
-}
 .gallery{
+    padding:70px 20px;
     text-align:center;
-    padding:60px 20px;
     background:#f9f9f9;
 }
 
 .gallery h2{
-    font-size:35px;
+    font-size:34px;
     margin-bottom:40px;
 }
 
 .gallery-container{
-    display:flex;
-    flex-wrap:wrap;
-    justify-content:center;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
     gap:20px;
+    max-width:1100px;
+    margin:auto;
 }
 
-.gallery-container img{
-    width:250px;
+.gallery img{
+    width:100%;
     border-radius:12px;
     box-shadow:0 5px 15px rgba(0,0,0,0.2);
 }
+
+/* ======================
+   PRICES
+   ====================== */
+
 .prices{
+    padding:70px 20px;
     text-align:center;
-    padding:60px 20px;
+    background:white;
 }
 
 .prices h2{
-    font-size:35px;
-    margin-bottom:40px;
+    font-size:34px;
+    margin-bottom:30px;
 }
 
 .prices table{
-    margin:0 auto;
-    border-collapse:collapse;
-    width:90%;
+    width:95%;
     max-width:700px;
+    margin:auto;
+    border-collapse:collapse;
 }
 
-.prices th, .prices td{
+.prices th,
+.prices td{
     border:1px solid #ddd;
-    padding:15px;
-    font-size:18px;
+    padding:14px;
+    font-size:16px;
 }
 
 .prices th{
     background:#111;
     color:white;
 }
-.upload{
-    text-align:center;
-    padding:60px 20px;
-    background:#f9f9f9;
-}
 
-.upload h2{
-    font-size:35px;
-    margin-bottom:40px;
-}
-
-.upload form{
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    gap:15px;
-}
-
-.upload input{
-    padding:12px;
-    width:300px;
-    border-radius:8px;
-    border:1px solid #ccc;
-}
-
-.upload button{
-    padding:15px 25px;
-    background:#25D366;
-    color:white;
-    border:none;
-    border-radius:8px;
-    font-weight:bold;
-    cursor:pointer;
-}/* Animated printing background */
-
-.background-animation{
-    position:fixed;
-    width:100%;
-    height:100%;
-    top:0;
-    left:0;
-    overflow:hidden;
-    z-index:-1;
-    background:linear-gradient(120deg,#ffffff,#f3f3f3);
-}
-
-.background-animation span{
-    position:absolute;
-    display:block;
-    width:250px;
-    height:250px;
-    border-radius:50%;
-    opacity:0.25;
-    animation: float 20s linear infinite;
-}
-
-/* CMYK printing colors */
-
-.background-animation span:nth-child(1){
-    background:#00AEEF; /* cyan */
-    left:10%;
-    top:80%;
-    animation-duration:25s;
-}
-
-.background-animation span:nth-child(2){
-    background:#EC008C; /* magenta */
-    left:70%;
-    top:90%;
-    animation-duration:22s;
-}
-
-.background-animation span:nth-child(3){
-    background:#FFF200; /* yellow */
-    left:50%;
-    top:70%;
-    animation-duration:28s;
-}
-
-.background-animation span:nth-child(4){
-    background:#000000; /* black ink */
-    left:30%;
-    top:85%;
-    animation-duration:30s;
-}
-
-.background-animation span:nth-child(5){
-    background:#ff7f00; /* orange print tone */
-    left:85%;
-    top:75%;
-    animation-duration:24s;
-}
-
-@keyframes float{
-    0%{
-        transform:translateY(0) scale(1);
-    }
-    50%{
-        transform:translateY(-600px) scale(1.2);
-    }
-    100%{
-        transform:translateY(-1200px) scale(1);
-    }
-}/* HERO SECTION */
-.hero {
-    height: 90vh;
-    background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)),
-    url("https://images.unsplash.com/photo-1562564055-71e051d33c19?auto=format&fit=crop&w=1600&q=80");
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    color: white;
-}
-
-.hero-content h1{
-    font-size: 60px;
-    letter-spacing: 3px;
-}
-
-.hero-content p{
-    font-size: 20px;
-    margin: 15px 0 25px;
-}
-
-.btn{
-    background: #ff3c3c;
-    color: white;
-    padding: 14px 28px;
-    text-decoration: none;
-    border-radius: 6px;
-    font-weight: bold;
-    transition: 0.3s;
-}
-
-.btn:hover{
-    background: #cc0000;
-}/* SERVICES */
-.services{
-    padding: 80px 20px;
-    background: #f4f4f4;
-    text-align: center;
-}
-
-.services h2{
-    font-size: 40px;
-    margin-bottom: 50px;
-}
-
-.services-container{
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 25px;
-    max-width: 1100px;
-    margin: auto;
-}
-
-.service-card{
-    background: white;
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-    transition: 0.3s;
-}
-
-.service-card:hover{
-    transform: translateY(-10px);
-}
-
-.service-card h3{
-    margin-bottom: 15px;
-    color: #ff3c3c;
-}/* GLASS EFFECT SECTIONS */
-
-.hero,
-.services{
-    backdrop-filter: blur(8px);
-    background: rgba(255,255,255,0.08);
-}
-
-/* cards */
-.service-card{
-    background: rgba(255,255,255,0.9);
-}/* floating abstract circles */
-
-body::before,
-body::after{
-    content:"";
-    position:fixed;
-    width:500px;
-    height:500px;
-    border-radius:50%;
-    filter: blur(120px);
-    z-index:-1;
-}
-
-body::before{
-    background:#ff3c3c;
-    top:-150px;
-    left:-150px;
-    animation: float1 18s infinite alternate;
-}
-
-body::after{
-    background:#00c6ff;
-    bottom:-150px;
-    right:-150px;
-    animation: float2 20s infinite alternate;
-}
-
-@keyframes float1{
-    from{ transform: translate(0,0);}
-    to{ transform: translate(200px,150px);}
-}
-
-@keyframes float2{
-    from{ transform: translate(0,0);}
-    to{ transform: translate(-200px,-120px);}
-}/* WhatsApp floating button */
-
-.whatsapp-btn{
-    position:fixed;
-    bottom:25px;
-    right:25px;
-    width:65px;
-    height:65px;
-    background:#25D366;
-    color:white;
-    font-size:30px;
-    border-radius:50%;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    text-decoration:none;
-    box-shadow:0 8px 25px rgba(0,0,0,0.3);
-    z-index:999;
-    transition:0.3s;
-}
-
-.whatsapp-btn:hover{
-    transform:scale(1.15);
-    background:#1ebe5d;
-}/* HERO IMAGE BACKGROUND */
-
-.hero-section{
-    position:relative;
-    height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    overflow:hidden;
-}
-
-/* the image */
-.hero-section::before{
-    content:"";
-    position:absolute;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
-
-    background:url("images/print.jpg");
-    background-size:cover;
-    background-position:center;
-    background-repeat:no-repeat;
-
-    filter:brightness(0.45);
-    z-index:-2;
-}/* HERO IMAGE BACKGROUND */
-.hero-section{
-    position:relative;
-    height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    overflow:hidden;
-    z-index:1;
-}
-
-.hero-section::before{
-    content:"";
-    position:absolute;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
-
-    background: url("images/print.jpg") center/cover no-repeat;
-    filter: brightness(0.45);
-    z-index:-1;
-}
-
-.hero{
-    text-align:center;
-    color:white;
-    z-index:2;
-}
-
-.hero h1{
-    font-size:50px;
-    margin-bottom:20px;
-}
-
-.hero p{
-    font-size:20px;
-    margin-bottom:25px;
-}
-
-.hero .whatsapp{
-    background:#25D366;
-    color:white;
-    padding:15px 30px;
-    border-radius:10px;
-    text-decoration:none;
-    font-weight:bold;
-    transition:0.3s;
-}
-
-.hero .whatsapp:hover{
-    background:#1ebe5d;
-}/* ===== MOBILE FIX ===== */
-
-html, body {
-  overflow-x: hidden;
-}
-
-* {
-  max-width: 100%;
-}
-
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
-
-.container {
-  width: 100% !important;
-  max-width: 1200px;
-  margin: auto;
-  padding-left: 15px;
-  padding-right: 15px;
-}
-
-section {
-  width: 100%;
-}
-
-.hero {
-  background-size: cover;
-  background-position: center;
-}/* =========================
-   MOBILE RESPONSIVE FIX
-   ========================= */
-
-/* remove the dangerous vh height */
-.hero-section{
-    height:auto !important;
-    min-height:520px;
-    padding:80px 20px;
-}
-
-/* hero container */
-.hero{
-    margin:40px auto !important;
-    padding:25px 15px !important;
-    max-width:95% !important;
-}
-
-/* logo scaling */
-.logo{
-    width:220px !important;
-    max-width:80%;
-    margin:0 auto 15px auto;
-}
-
-/* titles */
-.hero h1{
-    font-size:28px !important;
-    line-height:1.2;
-}
-
-.hero p{
-    font-size:16px !important;
-}
-
-/* services cards stack vertically */
-.service-cards{
-    flex-direction:column !important;
-    align-items:center;
-}
-
-.card{
-    width:90% !important;
-    max-width:340px;
-}
-
-/* gallery images */
-.gallery-container img{
-    width:100% !important;
-    max-width:320px;
-}
-
-/* prevent horizontal scrolling (THIS removes the grey side) */
-html,body{
-    overflow-x:hidden !important;
-}/* CONTACT FORM */
+/* ======================
+   CONTACT
+   ====================== */
 
 .contact{
-    text-align:center;
     padding:70px 20px;
-    background:#ffffff;
-}
-
-.contact h2{
-    font-size:36px;
-    margin-bottom:30px;
+    text-align:center;
+    background:#f4f4f4;
 }
 
 .contact form{
@@ -683,38 +197,54 @@ html,body{
     padding:14px;
     border-radius:8px;
     border:1px solid #ccc;
-    font-size:16px;
     width:100%;
-}
-
-.contact textarea{
-    min-height:130px;
-    resize:vertical;
 }
 
 .contact button{
     background:#25D366;
     color:white;
-    padding:15px;
+    padding:14px;
     border:none;
     border-radius:8px;
-    font-size:18px;
     font-weight:bold;
     cursor:pointer;
-    transition:0.3s;
 }
 
-.contact button:hover{
-    background:#1ebe5d;
+/* ======================
+   FOOTER
+   ====================== */
+
+footer{
+    background:#111;
+    color:white;
+    text-align:center;
+    padding:20px;
 }
 
+/* ======================
+   MOBILE FIX
+   ====================== */
 
+@media(max-width:768px){
 
+    .hero h1{
+        font-size:28px;
+    }
 
+    .hero p{
+        font-size:15px;
+    }
 
+    .logo{
+        width:170px;
+    }
 
+    .service-cards{
+        grid-template-columns:1fr;
+    }
 
+    .gallery-container{
+        grid-template-columns:1fr;
+    }
 
-
-
-
+}
