@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Créer ma carte - BK Center</title>
+<link rel="stylesheet" href="style.css">
+
+<style>
+body{
+    background:linear-gradient(135deg,#6b3fd1,#2c5364);
+    font-family:Arial;
+    color:white;
+    text-align:center;
+    padding:20px;
+}
+
+.container{
+    max-width:900px;
+    margin:auto;
+}
+
+.inputs{
+    margin-top:20px;
+}
+
+input{
+    width:80%;
+    padding:12px;
+    margin:10px;
+    border-radius:8px;
+    border:none;
+}
+
+.preview-card{
+    width:350px;
+    height:200px;
+    background:white;
+    color:black;
+    border-radius:12px;
+    margin:40px auto;
+    padding:20px;
+    box-shadow:0 15px 40px rgba(0,0,0,0.4);
+    position:relative;
+    text-align:left;
+}
+
+.logo{
+    position:absolute;
+    top:15px;
+    right:20px;
+    font-weight:bold;
+    color:#6b3fd1;
+}
+
+.name{
+    font-size:22px;
+    font-weight:bold;
+    margin-top:60px;
+}
+
+.job{
+    color:#6b3fd1;
+    margin-top:5px;
+}
+
+.phone{
+    position:absolute;
+    bottom:20px;
+    left:20px;
+    font-weight:bold;
+}
+
+button{
+    padding:15px 25px;
+    background:#25D366;
+    border:none;
+    border-radius:10px;
+    color:white;
+    font-size:18px;
+    cursor:pointer;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+<h1>Créez votre carte de visite</h1>
+<p>Personnalisez et visualisez avant impression</p>
+
+<div class="inputs">
+<input type="text" id="clientName" placeholder="Votre nom">
+<input type="text" id="clientJob" placeholder="Profession">
+<input type="text" id="clientPhone" placeholder="Téléphone">
+</div>
+
+<div class="preview-card">
+<div class="logo">BK CENTER</div>
+<div class="name" id="previewName">Votre Nom</div>
+<div class="job" id="previewJob">Votre Profession</div>
+<div class="phone" id="previewPhone">06 00 00 00 00</div>
+</div>
+
+<button onclick="orderCard()">Commander cette carte</button>
+
+</div>
+
+<script>
+const nameInput = document.getElementById("clientName");
+const jobInput = document.getElementById("clientJob");
+const phoneInput = document.getElementById("clientPhone");
+
+nameInput.addEventListener("input",()=> {
+document.getElementById("previewName").innerText=nameInput.value || "Votre Nom";
+});
+
+jobInput.addEventListener("input",()=> {
+document.getElementById("previewJob").innerText=jobInput.value || "Votre Profession";
+});
+
+phoneInput.addEventListener("input",()=> {
+document.getElementById("previewPhone").innerText=phoneInput.value || "06 00 00 00 00";
+});
+
+function orderCard(){
+let name=nameInput.value;
+let job=jobInput.value;
+let phone=phoneInput.value;
+
+let message=`Commande Carte de Visite:
+Nom: ${name}
+Profession: ${job}
+Téléphone: ${phone}`;
+
+window.location.href="https://wa.me/212650102414?text="+encodeURIComponent(message);
+}
+</script>
+
+</body>
+</html>
