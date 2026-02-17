@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Commander - BK Center</title>
+<link rel="stylesheet" href="style.css">
+
+<style>
+body{
+    background:#f4f6fb;
+    font-family:Arial;
+}
+
+.order-box{
+    max-width:500px;
+    margin:40px auto;
+    background:white;
+    padding:25px;
+    border-radius:15px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.15);
+}
+
+.order-box h2{
+    text-align:center;
+    margin-bottom:20px;
+}
+
+label{
+    font-weight:bold;
+    display:block;
+    margin-top:15px;
+}
+
+input, select{
+    width:100%;
+    padding:12px;
+    margin-top:6px;
+    border-radius:8px;
+    border:1px solid #ccc;
+}
+
+.price{
+    font-size:22px;
+    font-weight:bold;
+    text-align:center;
+    margin-top:20px;
+    color:#6b3fd1;
+}
+
+button{
+    width:100%;
+    margin-top:20px;
+    padding:15px;
+    background:#25D366;
+    border:none;
+    border-radius:10px;
+    color:white;
+    font-size:18px;
+    cursor:pointer;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="order-box">
+<h2>Commander vos impressions</h2>
+
+<label>Type d'impression</label> <select id="type">
+
+<option value="Flyers A5">Flyers A5</option>
+<option value="Flyers A6">Flyers A6</option>
+<option value="Cartes de visite">Cartes de visite</option>
+<option value="Affiche A3">Affiche A3</option>
+</select>
+
+<label>Quantité</label> <input type="number" id="qty" value="100">
+
+<label>Votre nom</label> <input type="text" id="name">
+
+<label>Votre téléphone</label> <input type="text" id="phone">
+
+<label>Envoyer votre fichier</label> <input type="file" id="file">
+
+<div class="price" id="price">Prix estimé : 0 DH</div>
+
+<button onclick="sendOrder()">Commander sur WhatsApp</button>
+
+</div>
+
+<script>
+
+function calculate(){
+    let qty = document.getElementById("qty").value;
+    let price = qty * 0.5;
+    document.getElementById("price").innerText = "Prix estimé : " + price + " DH";
+}
+
+document.getElementById("qty").addEventListener("input",calculate);
+
+function sendOrder(){
+    let type = document.getElementById("type").value;
+    let qty = document.getElementById("qty").value;
+    let name = document.getElementById("name").value;
+    let phone = document.getElementById("phone").value;
+
+    let message = `Nouvelle commande BK Center:
+Nom: ${name}
+Tel: ${phone}
+Produit: ${type}
+Quantité: ${qty}`;
+
+    let whatsapp = "https://wa.me/212650102414?text=" + encodeURIComponent(message);
+
+    window.open(whatsapp, "_blank");
+}
+
+</script>
+
+</body>
+</html>
